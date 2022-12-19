@@ -4,19 +4,23 @@ class Stack:
     
     # помещение строки в стек
     def push(self, value):
-        pass
+        self.__li.append(value)
 
     # выталкивание строки из стека
     def pop(self):
-        pass
+        if len(self.__li):
+            return self.__li.pop()
 
     # подсчет количества строк в стеке
     def counting(self):
-        return len(self.__li)
+        return print(len(self.__li))
 
     # проверка пустой ли стек
     def isEmplyStack(self):
-        pass
+        if self.__li == []:
+            print("True")
+        else:
+            print("False")
 
     # проверка полный ли стек
     def isFullStack(self):
@@ -28,5 +32,13 @@ class Stack:
 
     # ■ получение значения без выталкивания верхней строки из стека. 
     def printStack(self):
-        pass
+        print(self.__li)
 
+stack = Stack()
+stack.push(2)
+stack.push(3)
+stack.push(4)
+stack.push(5)
+stack.printStack()
+stack.counting()
+stack.isEmplyStack()
