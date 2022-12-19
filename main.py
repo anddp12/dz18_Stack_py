@@ -1,10 +1,12 @@
 class Stack:
-    def __init__(self) -> None:
+    def __init__(self,n) -> None:
         self.__li = []
+        self.n = n
     
     # помещение строки в стек
     def push(self, value):
-        self.__li.append(value)
+        if len(self.__li) < self.n:
+            self.__li.append(value)
 
     # выталкивание строки из стека
     def pop(self):
@@ -24,17 +26,20 @@ class Stack:
 
     # проверка полный ли стек
     def isFullStack(self):
-        pass
+        if self.__li == self.n:
+            print("True")
+        else:
+            print("False")
 
     # очистка стека
     def cleaning(self):
-        pass
+        return self.__li.clear()
 
     # ■ получение значения без выталкивания верхней строки из стека. 
     def printStack(self):
         print(self.__li)
 
-stack = Stack()
+stack = Stack(3)
 stack.push(2)
 stack.push(3)
 stack.push(4)
@@ -42,3 +47,6 @@ stack.push(5)
 stack.printStack()
 stack.counting()
 stack.isEmplyStack()
+stack.isFullStack()
+# stack.cleaning()
+# stack.printStack()
