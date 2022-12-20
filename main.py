@@ -1,5 +1,5 @@
 class Stack:
-    def __init__(self,n) -> None:
+    def __init__(self, n) -> None:
         self.__li = []
         self.n = n
     
@@ -35,18 +35,42 @@ class Stack:
     def cleaning(self):
         return self.__li.clear()
 
-    # ■ получение значения без выталкивания верхней строки из стека. 
+    # получение значения без выталкивания верхней строки из стека. 
     def printStack(self):
         print(self.__li)
 
 stack = Stack(3)
-stack.push(2)
-stack.push(3)
-stack.push(4)
-stack.push(5)
-stack.printStack()
-stack.counting()
+# stack.push(2)
+# stack.push(3)
+# stack.push(4)
+# stack.push(5)
+# stack.printStack()
+# stack.pop()
+# stack.printStack()
+# stack.counting()
 stack.isEmplyStack()
-stack.isFullStack()
+# stack.isFullStack()
 # stack.cleaning()
 # stack.printStack()
+
+while True:
+    answer1 = input("Если желаете воспользоваться приложением работы со стеком нажмите 'Y', если нет, то - 'N': \n")
+    if answer1.lower() == "n":
+        break
+    elif answer1.lower() == "y":
+        answer2 = input("Веберите следующие действия: 1 - помещение строки в стек; 2 - выталкивание строки из стека; 3 - подсчет количества строк в стеке; 4 - проверка пустой ли стек; 5 - проверка полный ли стек; 6 - очистка стека: \n")
+        if answer2 == "1":
+            stack.push(input("Введите значение: "))
+            stack.printStack()
+        if answer2 == "2":
+            stack.pop()
+            stack.printStack()
+        elif answer2 == "3":
+            stack.counting()
+        elif answer2 == "4":
+            stack.isEmplyStack()
+        elif answer2 == "5":
+            stack.isFullStack()
+        elif answer2 == "6":
+            stack.cleaning()
+            stack.printStack()
