@@ -15,19 +15,19 @@ class Stack:
 
     # подсчет количества строк в стеке
     def counting(self):
-        return print(len(self.__li))
+        return print(f"Количество строк в стеке - {len(self.__li)}")
 
     # проверка пустой ли стек
     def isEmplyStack(self):
         if self.__li == []:
-            print("True")
+            print("Стек пустой")
         else:
-            print("False")
+            print(f"Стек не пустой, имеет {len(self.__li)} элемента")
 
     # проверка полный ли стек
     def isFullStack(self):
         if self.__li == self.n:
-            print("True")
+            print("Стек полный")
         else:
             print("False")
 
@@ -39,7 +39,7 @@ class Stack:
     def printStack(self):
         print(self.__li)
 
-stack = Stack(3)
+stack = Stack(4)
 # stack.push(2)
 # stack.push(3)
 # stack.push(4)
@@ -48,7 +48,7 @@ stack = Stack(3)
 # stack.pop()
 # stack.printStack()
 # stack.counting()
-stack.isEmplyStack()
+# stack.isEmplyStack()
 # stack.isFullStack()
 # stack.cleaning()
 # stack.printStack()
@@ -73,4 +73,4 @@ while True:
             stack.isFullStack()
         elif answer2 == "6":
             stack.cleaning()
-            stack.printStack()
+            print("Стек очищен")
