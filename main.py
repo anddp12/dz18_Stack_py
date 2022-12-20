@@ -26,16 +26,20 @@ class Stack:
 
     # проверка полный ли стек
     def isFullStack(self):
-        if self.__li == self.n:
+        if len(self.__li) == self.n:
             print("Стек полный")
         else:
-            print("False")
+            print(f"Стек не полный, имеет {len(self.__li)} элемента из {self.n}")
 
     # очистка стека
     def cleaning(self):
         return self.__li.clear()
 
     # получение значения без выталкивания верхней строки из стека. 
+    def noPushing_out(self):
+        print(self.__li[:-1])
+
+    # вывод стека
     def printStack(self):
         print(self.__li)
 
@@ -52,6 +56,7 @@ stack = Stack(4)
 # stack.isFullStack()
 # stack.cleaning()
 # stack.printStack()
+# stack.noPushing_out()
 
 while True:
     answer1 = input("Если желаете воспользоваться приложением работы со стеком нажмите 'Y', если нет, то - 'N': \n")
